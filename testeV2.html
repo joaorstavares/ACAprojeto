@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    #table {
+        border: 1px solid; position: absolute; top:80px; background-color: white;
+    }
+    td {
+        width: 110px;
+    }
+    th {
+        background-color:grey;
+        color: #FFFFFF;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Finder!</title>
+</head>
+<body>
+<div style="float:left">
+    <h3>Resultados</h3>
+    <div>
+        <form type="GET" action="searchFlights.php">
+            <label>Aeroporto de Partida:</label>
+            <input id="idTxtAeroportoP" type="text" name="aeroP" placeholder="Campo Obrigatório IATA" required="required">
+            <label>Aeroporto de Destino:</label>
+            <input id="idTxtAeroportoC" type="text" name="aeroD" placeholder="Campo Obrigatório IATA" required="required">
+            <br>
+            <br>
+            <label>Quantos passageiros adultos:</label>
+            <select id="idSelectPaxA" name="passageirosA">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <br>
+            <br>
+            <label>Data de Partida:</label>
+            <input type="date" name="dataP" placeholder="YYYY-MM-DD">
+            <label>Data de Regresso:</label>
+            <input id="dataVolta" type="date" name="dataV" placeholder="YYYY-MM-DD">
+            <br>
+            <br>
+            <label>Quantas Voos Quer Ver:</label>
+            <select id="idQuantasPesquisas" name="quantasPesquisasQuer">
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+                <option value="90">90</option>
+            </select>
+            <input type="submit" value="Procurar" name="teste" onclick="results()">
+        </form>
+    </div>
+</div>
+<div style="float:right;margin-right:500px;">
+<div>
+	<h3>Lista de Aeroportos</h3>
+	<div>
+		<table id="table">
+			<tr>
+				<th>IATA</th><th>Nome Aeroporto</th><th>Localização</th>
+			</tr>
+			<tr>
+				<td>LIS</td><td>Aeroporto Humberto Delgado</td><td>Lisboa,Portugal</td>
+			</tr>
+			<tr>
+				<td>OPO</td><td>Francisco de Sá Carneiro</td><td>Porto,Portugal</td>
+			</tr>
+			<tr>
+				<td>FAO</td><td>Aeroporto de Faro</td><td>Faro,Portugal</td>
+			</tr>
+			<tr>
+				<td>HOR</td><td>Aeroporto da Horta</td><td>Horta,Açores,Portugal</td>
+			</tr>
+			<tr>
+				<td>PDL</td><td>Aeroporto João Paulo II</td><td>Ponta Delgada,Açores,Portugal</td>
+			</tr>
+			<tr>
+				<td>FNC</td><td>Aeroporto da Madeira</td><td>Funchal,Madeira,Portugal</td>
+			</tr>
+			<tr>
+				<td>PXO</td><td>Aeroporto do Porto Santo</td><td>Porto Santo,Portugal</td>
+			</tr>
+			<tr>
+				<td>MAD</td><td>Aeroporto de Barajas</td><td>Madrid,Espanha</td>
+			</tr>
+			<tr>
+				<td>BCN</td><td>Aeroporto de El Prat</td><td>Barcelona,Espanha</td>
+			</tr>
+			<tr>
+				<td>CDG</td><td>Aeroporto Charles de Gaulle</td><td>Paris,França</td>
+			</tr>
+			<tr>
+				<td>LCY</td><td>Aeroporto da Cidade de Londres</td><td>Londres,Inglaterra</td>
+			</tr>
+			<tr>
+				<td>MAN</td><td>Aeroporto de Manchester</td><td>Manchester,Inglaterra</td>
+			</tr>
+			<tr>
+				<td>DUB</td><td>Aeroporto de Dublin</td><td>Dublin,Irlanda</td>
+			</tr>
+			<tr>
+				<td>GLA</td><td>Aeroporto de Glasgow</td><td>Glasgow,Escócia</td>
+			</tr>
+			<tr>
+				<td>CWL</td><td>Aeroporto de Cardiff</td><td>Cardiff,País de Gales</td>
+			</tr>
+			<tr>
+				<td>AMS</td><td>Schiphol Aeroporto de Amesterdão</td><td>Amesterdão,Holanda</td>
+			</tr>
+			<tr>
+				<td>CIA</td><td>Aeroporto Internacional de Ciampino</td><td>Roma,Itália</td>
+			</tr>
+			<tr>
+				<td>NAP</td><td>Aeroporto Internacional de Nápoles</td><td>Napoles,Itália</td>
+			</tr>
+			<tr>
+				<td>VIE</td><td>Aeroporto Internacional de Viena</td><td>Viena,Austria</td>
+			</tr>
+			<tr>
+				<td>GVA</td><td>Aeroporto de Geneva</td><td>Generba,Suiça</td>
+			</tr>
+			<tr>
+				<td>BER</td><td>Brandenburg Aeroporto de Berlim</td><td>Berlim,Alemanha</td>
+			</tr>
+			<tr>
+				<td>MUC</td><td>Aeroporto de Munique</td><td>Munique,Alemnha</td>
+			</tr>
+			<tr>
+				<td>FRA</td><td>Aeroporto de Frankfurt</td><td>Frankfurt,Alemanha</td>
+			</tr>
+		</table>
+	</div>
+</div>
+</div>
+</body>
+</html>
